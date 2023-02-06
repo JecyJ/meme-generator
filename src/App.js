@@ -3,8 +3,8 @@ import Main from "./components/main";
 
 function App() {
   return (
-    <div className="App flex justify-center mt-8">
-      <div className=" border w-3/5">
+    <div className="App flex justify-center bg-blue-300 w-full h-screen">
+      <div className="w-3/5 mt-8">
         <Header />
         <Main />
       </div>      
