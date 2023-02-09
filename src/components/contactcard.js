@@ -19,8 +19,7 @@ export default function Contact() {
     function toggleFavorite() {
         return setContact(prevContact => {
             return (
-                {...prevContact},
-                {isFavorite: !prevContact.isFavorite}
+                {...prevContact, isFavorite: !prevContact.isFavorite}
             )
         })
     }
