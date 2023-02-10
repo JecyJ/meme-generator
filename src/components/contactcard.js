@@ -1,8 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import user from "../images/user.png"
-import emptyStar from "../images/star-empty.png"
-import filledStar from "../images/star-filled.png"
+import Star from "./star"
 
 export default function Contact() {
     const [contact, setContact] = useState({
@@ -10,10 +9,10 @@ export default function Contact() {
         lastName: "Doe",
         phone: "+1 (719) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: false
+        isFavorite: true
     })
    
-    let starIcon = contact.isFavorite ? `${filledStar}` : `${emptyStar}`
+    
     
     
     function toggleFavorite() {
@@ -29,12 +28,7 @@ export default function Contact() {
             <article className="card">
                 <img src={user} className="w-6/7" alt=""/>
                 <div className="card--info">
-                    <img 
-                        src={starIcon}
-                        alt="" 
-                        className="w-7 mb-3"
-                        onClick={toggleFavorite}
-                    />
+                    <Star isFilled={contact.isFavorite} />
                     <h2 className="font-semibold text-4xl mb-4">
                         {`${contact.firstName} ${contact.lastName}`}
                     </h2>
