@@ -9,7 +9,7 @@ export default function Contact() {
         lastName: "Doe",
         phone: "+1 (719) 555-1212",
         email: "itsmyrealname@example.com",
-        isFavorite: true
+        isFavorite: false
     })
    
     
@@ -28,7 +28,7 @@ export default function Contact() {
             <article className="card">
                 <img src={user} className="w-6/7" alt=""/>
                 <div className="card--info">
-                    <Star isFilled={contact.isFavorite} />
+                    <Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
                     <h2 className="font-semibold text-4xl mb-4">
                         {`${contact.firstName} ${contact.lastName}`}
                     </h2>

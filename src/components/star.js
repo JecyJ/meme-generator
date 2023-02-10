@@ -10,7 +10,7 @@ function Star(props) {
             src={starIcon}
             alt="" 
             className="w-7 mb-3"
-            // onClick={toggleFavorite}
+            onClick={props.handleClick}
         />
     )
 }
