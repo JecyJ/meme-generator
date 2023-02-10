@@ -1,4 +1,5 @@
 import {useState} from "react"
+import Count from "./count"
 
 function Test() {
     const [count, setCount] = useState(0)
@@ -22,13 +23,12 @@ function choice() {
 
     return(
         <div>
-            <div className="flex justify-center mt-20">
-                <div className="flex items-baseline">
-                    <p className="border rounded-full border-black p-6 bg-gray-700 hover:bg-gray-800" onClick={subtract}>-</p>
-                    <p className="border rounded-full border-black p-16 bg-white">{count}</p>
-                    <p className="border rounded-full border-black p-6 bg-gray-700 hover:bg-gray-800" onClick={add
-                    }>+</p>
-                </div>           
+            <div className="flex justify-center items-baseline mt-20">
+                <p className="border rounded-full border-black p-6 bg-gray-700 hover:bg-gray-800" onClick={subtract}>-
+                </p>
+                <Count number={count} />
+                <p className="border rounded-full border-black p-6 bg-gray-700 hover:bg-gray-800" onClick={add}>+
+                </p>           
             </div>
             <div className="flex flex-col items-center mt-5">
                 <h1 className="text-3xl text-center font-semibold">Am i in the mood to go out today?</h1>
