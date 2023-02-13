@@ -2,6 +2,7 @@ import Header from "./components/header";
 import Main from "./components/main";
 import Test from "./components/test"
 import Contact from "./components/contactcard";
+import Box from "./components/box"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Main />
         <Test />
         <Contact />
+        <Box />
       </div>      
     </div>
   );
