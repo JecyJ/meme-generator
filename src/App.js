@@ -12,7 +12,7 @@ function App() {
         <Main />
         <Test />
         <Contact />
-        <Box />
+        <Box darkMode= {true} />
       </div>      
     </div>
   );
