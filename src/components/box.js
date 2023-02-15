@@ -1,16 +1,16 @@
 import setBoxes from "./boxes";
 import {useState} from "react"
+import Box1 from "./box1";
 
 function Box(props) {
-    const [sqaures, setSquares] = useState(setBoxes)
-    const dark = props.darkMode
+    const [squares, setSquares] = useState(setBoxes)
+    
+    function toggle() {
+        console.log("clicked")
+    }
 
-    const styles = {
-        backgroundColor: dark ? '#222222' : '#cccccc'
-    }  
-
-    const squareElements = sqaures.map(square => (
-        <div style={styles} className="w-12 h-12 mt-5 border border-gray-500 rounded-lg mr-5 inline-block " key={setBoxes.id}></div>
+    const squareElements = squares.map(square => (
+        <Box1 on = {square.on}  key={props.id} toggle = {toggle} />
     ))
 
 
