@@ -5,14 +5,16 @@ import Box1 from "./box1";
 function Box(props) {
     const [squares, setSquares] = useState(setBoxes)
     
-    function toggle(id) {
-        //This is a more concise way of doing it (imperative way). refer to the commented code below for the declarative way of doing it      
-        return setSquares(prevSquares => {
-           return prevSquares.map((square) => {
+    
+   function toggle(id) {
+            //This is a more concise way of doing it (imperative way). refer to the commented code below for the declarative way of doing it.
+            //.map returns a new array without modifying the original array, it will have thhe same length as the original array. 
+        return setSquares(prevSquare => {
+            return prevSquare.map((square) => {
                 return square.id === id ? {...square, on: !square.on} : square
-           })
+            })
         })
-    }
+   }
     
     const squareElements = squares.map(square => (
         <Box1 
