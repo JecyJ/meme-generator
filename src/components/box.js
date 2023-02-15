@@ -19,9 +19,9 @@ function Box(props) {
     const squareElements = squares.map(square => (
         <Box1 
             on = {square.on} 
-            id = {square.id}  
             key={square.id} 
-            toggle = {toggle} />
+            toggle = {() => toggle(square.id)}
+         />
     ))
 
 

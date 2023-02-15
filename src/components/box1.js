@@ -12,7 +12,7 @@ function Box1(props) {
         <div 
             style={styles} 
             className="w-12 h-12 mt-5 border border-gray-500 rounded-lg mr-5 inline-block" 
-            onClick={() =>toggle(props.id)}>
+            onClick={toggle}>
         </div>
     )
 }
