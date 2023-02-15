@@ -5,12 +5,31 @@ import Box1 from "./box1";
 function Box(props) {
     const [squares, setSquares] = useState(setBoxes)
     
-    function toggle() {
-        console.log("clicked")
+    function toggle(id) {        
+        return setSquares(prevSquares => {
+            const newSquares = []
+            for (let i = 0; i < prevSquares.length; i++) {
+                const currentSquares = prevSquares[i]
+                if(currentSquares.id === id) {
+                    const updatedSquare = {
+                        ... currentSquares, 
+                        on: !currentSquares.on
+                    }
+                    newSquares.push(updatedSquare)
+                } else {
+                    newSquares.push(currentSquares)
+                }
+            }
+            return newSquares
+        })
     }
-
+    
     const squareElements = squares.map(square => (
-        <Box1 on = {square.on}  key={props.id} toggle = {toggle} />
+        <Box1 
+            on = {square.on} 
+            id = {square.id}  
+            key={square.id} 
+            toggle = {toggle} />
     ))
 
 
