@@ -3,6 +3,7 @@ import Main from "./components/main";
 import Test from "./components/test"
 import Contact from "./components/contactcard";
 import Box from "./components/box"
+import Form from "./components/form"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Test />
         <Contact />
         <Box darkMode= {true} />
+        <Form />
       </div>      
     </div>
   );
