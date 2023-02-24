@@ -4,6 +4,7 @@ import Test from "./components/test"
 import Contact from "./components/contactcard";
 import Box from "./components/box"
 import Form from "./components/form"
+import FormPractise from "./components/form practise";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Contact />
         <Box darkMode= {true} />
         <Form />
+        <FormPractise />
       </div>      
     </div>
   );
