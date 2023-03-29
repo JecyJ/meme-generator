@@ -17,7 +17,7 @@ function Main() {
         const rand = Math.floor(Math.random() * memeArr.length)
         const url = memeArr[rand].url
        setMeme(prevMeme => {
-        return ({...prevMeme, randomImage: url,})
+        return ({...prevMeme, randomImage: url})
        })
     }
 
@@ -31,7 +31,7 @@ function Main() {
    
 
     return(
-        <main className="bg-gray-500 py-8">
+        <main className="bg-gray-500 py-8 ">
             <div className="form flex flex-col px-5">
                 <div className="flex space-x-5 pb-7 w-full">
                     <input 
@@ -55,15 +55,11 @@ function Main() {
                     Get a new Meme Image
                     <img className="w-6" src={frame} alt="" />
                 </button>
-                <div className="relative">
+                <div className="flex flex-row justify-center relative">
                     <img className="my-6" src={meme.randomImage} alt="" />
-                    <div className="absolute">
-                        <h2 className=" text-2xl font-semibold text-white">{meme.topText}</h2>
-                        <h2 className=" text-2xl font-semibold text-white">{meme.bottomText}</h2>
-                    </div>
-                    
-                </div>
-                
+                    <h2 className="mt-4 absolute text-4xl font-bold text-white text-center top-0">{meme.topText}</h2>
+                    <h2 className="absolute text-4xl font-bold text-white text-center bottom-7">{meme.bottomText}</h2>                                      
+                </div>                
             </div>
         </main>
     )

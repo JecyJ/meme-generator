@@ -5,6 +5,7 @@ import Contact from "./components/contactcard";
 import Box from "./components/box"
 import Form from "./components/form"
 import FormPractise from "./components/form practise";
+import Api from "./components/apis"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Box darkMode= {true} />
         <Form />
         <FormPractise />
+        <Api />
       </div>      
     </div>
   );
