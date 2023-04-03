@@ -1,21 +1,25 @@
 import frame from "../images/frame.png"
-import memesData from "./memesData";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 function Main() {
-    // const [memeImage, setMemeImage] = useState("https://i.imgflip.com/30b1gx.jpg")
     const [meme, setMeme] = useState({
         topText: "",
         bottomText: "",
-        randomImage: "https://i.imgflip.com/1g8my4.jpg"
+        randomImage: "https://i.imgflip.com/30b1gx.jpg"
     })
-                        // , SetAllMemeImages
-    const [allMemeImages] = useState(memesData)
+    
+    const [allMemes, setAllMemes] = useState([])
+
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMemes(data.data.memes)) 
+    }, []) 
+    
 
     function getMemeImage() {
-        const memeArr = allMemeImages.data.memes
-        const rand = Math.floor(Math.random() * memeArr.length)
-        const url = memeArr[rand].url
+        const rand = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[rand].url
        setMeme(prevMeme => {
         return ({...prevMeme, randomImage: url})
        })
@@ -27,7 +31,6 @@ function Main() {
             return ({...prevMeme, [name] : value})
            })
     }
-
    
 
     return(
@@ -57,10 +60,10 @@ function Main() {
                 </button>
                 <div className="flex flex-row justify-center relative">
                     <img className="my-6" src={meme.randomImage} alt="" />
-                    <h2 className="mt-4 absolute text-4xl font-bold text-white text-center top-0">{meme.topText}</h2>
-                    <h2 className="absolute text-4xl font-bold text-white text-center bottom-7">{meme.bottomText}</h2>                                      
-                </div>                
-            </div>
+                    <h2 className="mt-4 absolute text-4xl font-bold text-[#f38e30] text-center top-0">{meme.topText}</h2>
+                    <h2 className="absolute text-4xl font-bold text-[#f38e30] text-center bottom-7">{meme.bottomText}</h2>                                      
+                </div>                               
+            </div>            
         </main>
     )
 }
