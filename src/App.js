@@ -6,6 +6,7 @@ import Box from "./components/box"
 import Form from "./components/form"
 import FormPractise from "./components/form practise";
 import Api from "./components/apis"
+import Window from "./components/window";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Form />
         <FormPractise />
         <Api />
+        <Window />
       </div>      
     </div>
   );
